@@ -66,6 +66,8 @@ POST /foods
 Uploads an image and stores analyzed nutrition data.
 
 screenshots
+<img width="1838" height="887" alt="Screenshot 2026-05-11 193409" src="https://github.com/user-attachments/assets/032186cb-859e-4d21-a558-21991a23c1ba" />
+
 <img width="1877" height="531" alt="Screenshot 2026-05-11 193422" src="https://github.com/user-attachments/assets/f00a79c2-975b-4cb8-b467-2bd4cecfe23c" />
 
 
