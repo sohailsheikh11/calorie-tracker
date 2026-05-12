@@ -1,6 +1,7 @@
 import fs from "fs";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import dotenv from "dotenv";
+import Food from "../model/calorie.model.js";
 
 dotenv.config();
 
@@ -58,9 +59,28 @@ export const analyzeFood = async (req, res) => {
         console.log("this is the response",response);
         console.log("this is the food data", foodData);
 
+        const savedFood = await Food.create({
+
+           
+      meal_type: foodData.meal_type,
+
+      food_name: foodData.food_name,
+
+      calories: foodData.calories,
+
+      protein: parseFloat(foodData.protein),
+
+      carbs: parseFloat(foodData.carbs),
+
+      fat: parseFloat(foodData.fat)
+
+    });
+
+         
+
         res.json({
             success: true,
-            data: foodData,
+            data: savedFood,
         });
 
     } catch (error) {

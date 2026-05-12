@@ -5,9 +5,6 @@ import AddFoodModal from "./components/AddFoodModal";
 import { API_BASE } from "./MEALTYPE";
 
 
-
-
-
 const DAILY_GOAL = 2000;
 
 const MACRO_COLORS = {
@@ -119,7 +116,7 @@ export default function CalorieTracker() {
 
   const fetchEntries = async () => {
     try {
-      const res = await fetch("http://localhost:3000"+API_BASE);
+      const res = await fetch("http://localhost:3000/food");
 
       
       const data = await res.json();
@@ -150,7 +147,7 @@ export default function CalorieTracker() {
 
   console.log("these are the enteries",entries);
 
-  const totalCalories = entries.reduce((s, e) => s + (Number(e.estimated_calories) || 1),0);
+  const totalCalories = entries.reduce((s, e) => s + (Number(e.calories) || 1),0);
   const totalProtein = entries.reduce((s, e) => s + (parseFloat(e.protein) || 0), 0);
 
   console.log("total protein", totalProtein);
