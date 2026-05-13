@@ -66,7 +66,7 @@ export const analyzeFood = async (req, res) => {
 
       food_name: foodData.food_name,
 
-      calories: foodData.calories,
+      calories: foodData.estimated_calories,
 
       protein: parseFloat(foodData.protein),
 

@@ -16,7 +16,8 @@ app.use(express.json());
 
 
 app.use("/api/food", foodRoute);
-app.use("", getFood);
+app.use("/food", getFood);
+
 
 app.get("/", (req, res) => {
     res.send("AI Food Calorie API");

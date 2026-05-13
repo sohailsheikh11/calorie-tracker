@@ -3,6 +3,9 @@ import FoodImageUpload from "./FoodImageUpload";
 import { MEAL_TYPES } from "./MEALTYPE";
 import AddFoodModal from "./components/AddFoodModal";
 import { API_BASE } from "./MEALTYPE";
+import MacroBar from "./components/MacroBar";
+import FoodCard from "./components/FoodCard";
+import CalorieRing from "./components/CalorieRing";
 
 
 const DAILY_GOAL = 2000;
@@ -12,98 +15,6 @@ const MACRO_COLORS = {
   carbs: "#3b82f6",
   fat: "#a855f7",
 };
-
-function MacroBar({ label, value, max, color }) {
-  const pct = Math.min((value / max) * 100, 100);
-  return (
-    <div className="space-y-1">
-      <div className="flex justify-between text-xs font-mono uppercase tracking-widest">
-        <span style={{ color }}>{label}</span>
-        <span className="text-zinc-400">{value}g</span>
-      </div>
-      <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-        <div
-          className="h-full rounded-full transition-all duration-700"
-          style={{ width: `${pct}%`, backgroundColor: color }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function CalorieRing({ consumed, goal }) {
-  const pct = Math.min(consumed / goal, 1);
-  const r = 54;
-  const circ = 2 * Math.PI * r;
-  const dash = pct * circ;
-  const over = consumed > goal;
-
-  return (
-    <div className="relative flex items-center justify-center w-40 h-40">
-      <svg className="absolute inset-0 -rotate-90" viewBox="0 0 128 128">
-        <circle cx="64" cy="64" r={r} fill="none" stroke="#27272a" strokeWidth="10" />
-        <circle
-          cx="64"
-          cy="64"
-          r={r}
-          fill="none"
-          stroke={over ? "#ef4444" : "#22c55e"}
-          strokeWidth="10"
-          strokeLinecap="round"
-          strokeDasharray={`${dash} ${circ}`}
-          className="transition-all duration-700"
-        />
-      </svg>
-      <div className="text-center z-10">
-        <div className={`text-2xl font-black font-mono ${over ? "text-red-400" : "text-green-400"}`}>
-          {consumed}
-        </div>
-        <div className="text-xs text-zinc-500 font-mono tracking-wider">/ {goal} kcal</div>
-      </div>
-    </div>
-  );
-}
-
-function FoodCard({ entry, onDelete }) {
-  return (
-    <div className="group flex items-center gap-3 bg-zinc-900 border border-zinc-800 hover:border-zinc-600 rounded-xl px-4 py-3 transition-all duration-200">
-      <div
-        className="w-2 h-2 rounded-full flex-shrink-0"
-        style={{
-          backgroundColor:
-            entry.mealType === "Breakfast"
-              ? "#facc15"
-              : entry.mealType === "Lunch"
-              ? "#22c55e"
-              : entry.mealType === "Dinner"
-              ? "#3b82f6"
-              : "#f97316",
-        }}
-      />
-      <div className="flex-1 min-w-0">
-        <div className="flex items-baseline gap-2">
-          <span className="font-semibold text-white text-sm truncate">{entry.food_name}</span>
-          <span className="text-xs text-zinc-500 font-mono">{entry.meal_type}</span>
-        </div>
-        <div className="flex gap-3 mt-0.5 text-xs font-mono text-zinc-500">
-          <span>P {entry.protein ?? 0}g</span>
-          <span>C {entry.carbs ?? 0}g</span>
-          <span>F {entry.fat ?? 0}g</span>
-          {entry.quantity && <span>×{entry.quantity}</span>}
-        </div>
-      </div>
-      <div className="flex items-center gap-3">
-        <span className="font-black text-white font-mono text-sm">{entry.calories}</span>
-        <button
-          onClick={() => onDelete(entry._id)}
-          className="opacity-0 group-hover:opacity-100 text-zinc-600 hover:text-red-400 transition-all duration-200 text-lg leading-none"
-        >
-          ×
-        </button>
-      </div>
-    </div>
-  );
-}
 
 
 
@@ -130,14 +41,15 @@ export default function CalorieTracker() {
     }
   };
 
-  useEffect(() => { fetchEntries(); }, []);
+  useEffect(() => { fetchEntries(); }, []); 
 
   const handleDelete = async (id) => {
     try {
-      await fetch(`${API_BASE}/${id}`, { method: "DELETE" });
+      await fetch(`http://localhost:3000/food/${id}`, { method: "DELETE" });
       setEntries((e) => e.filter((x) => x._id !== id));
     } catch {}
   };
+
 
   const handleAdd = (newEntry) => {
     setEntries((e) => [newEntry, ...e]);

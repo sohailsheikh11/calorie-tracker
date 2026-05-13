@@ -8,7 +8,7 @@ export default async function getFood(req,res){
    try{
      const foods = await Food.find();
 
-     console.log("this is teh foods"+ foods);
+     console.log("this is the foods"+ foods);
 
      res.json(foods);
    }catch(e){
