@@ -5,6 +5,7 @@ import foodRoute from "./routes/food.route.js";
 import connectDB from "./config/db.js";
 import getFood from "./Routes/getFood.route.js";
 import { get } from "mongoose";
+import auth from "./Routes/authRoute.js"
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use("/api/food", foodRoute);
 app.use("/food", getFood);
+app.use("/auth", auth);
 
 
 app.get("/", (req, res) => {
