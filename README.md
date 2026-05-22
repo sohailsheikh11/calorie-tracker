@@ -11,15 +11,15 @@ An AI-powered calorie tracking web application that analyzes food images and est
 📊 Daily calorie calculations
 🗺 Built with a modern React frontend and Node.js backend
 🛠 Tech Stack
-Frontend
-React
-Vite
-Fetch API
-CSS
-Backend
-Node.js
-Express.js
-Multer
+Frontend 
+React 
+Vite 
+Fetch API 
+CSS 
+Backend 
+Node.js 
+Express.js 
+Multer 
 Gemini AI API
 Mongoose
 Database
@@ -39,30 +39,30 @@ project/
 ⚙️ Installation
 1. Clone Repository
 git clone https://github.com/yourusername/ai-calorie-tracker.git
-2. Install Dependencies
-Frontend
-cd Frontend
-npm install
+2. Install Dependencies 
+Frontend 
+cd Frontend 
+npm install 
 
-Backend
-cd Backend
-npm install
-🔑 Environment Variables
+Backend 
+cd Backend 
+npm install 
+🔑 Environment Variables 
 
-Create a .env file inside the Backend folder:
+Create a .env file inside the Backend folder: 
 
-GEMINI_API_KEY=your_api_key
-MONGO_URI=your_mongodb_connection_string
-▶️ Run the Application
-Start Backend
-cd Backend
-npm run dev
-Start Frontend
-cd Frontend
-npm run dev
-🌐 API Routes
-Analyze Food Image
-POST /foods
+GEMINI_API_KEY=your_api_key 
+MONGO_URI=your_mongodb_connection_string 
+▶️ Run the Application 
+Start Backend 
+cd Backend 
+npm run dev 
+Start Frontend 
+cd Frontend 
+npm run dev 
+🌐 API Routes 
+Analyze Food Image 
+POST /foods 
 
 Uploads an image and stores analyzed nutrition data.
 
