@@ -34,8 +34,9 @@ An AI-powered calorie tracking web application that analyzes food images and est
 ### Database
 - MongoDB Atlas
 
----
+## 📂 Project Structure
 
+```bash
 AI-Calorie-Tracker/
 │
 ├── Frontend/
@@ -63,8 +64,7 @@ AI-Calorie-Tracker/
 │
 ├── README.md
 └── .gitignore
-
----
+```
 
 
 
