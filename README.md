@@ -43,6 +43,7 @@ git clone https://github.com/yourusername/ai-calorie-tracker.git
 Frontend
 cd Frontend
 npm install
+
 Backend
 cd Backend
 npm install
