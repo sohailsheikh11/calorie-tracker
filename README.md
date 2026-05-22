@@ -66,6 +66,107 @@ AI-Calorie-Tracker/
 └── .gitignore
 ```
 
+# 🌐 API Routes
+
+## 🍱 Food Routes
+
+### Get All Foods
+
+```http
+GET /food
+```
+
+Fetch all saved food entries.
+
+---
+
+### Delete Food Entry
+
+```http
+DELETE /food/:id
+```
+
+Deletes a food entry by ID.
+
+| Parameter | Type | Description |
+|----------|------|-------------|
+| `id` | String | Food document ID |
+
+---
+
+### Analyze Food Image
+
+```http
+POST /api/food/analyze
+```
+
+Uploads a food image, analyzes nutrition details using Gemini AI, and stores the result in MongoDB.
+
+### Form Data
+
+| Key | Type |
+|-----|------|
+| `image` | File |
+
+---
+
+## 🔐 Authentication Routes
+
+### User Signup
+
+```http
+POST /auth/signup
+```
+
+Creates a new user account.
+
+### Request Body
+
+```json
+{
+  "name": "Sohail",
+  "email": "sohail@example.com",
+  "password": "password123"
+}
+```
+
+---
+
+### User Login
+
+```http
+POST /auth/login
+```
+
+Authenticates a user and returns a token.
+
+### Request Body
+
+```json
+{
+  "email": "sohail@example.com",
+  "password": "password123"
+}
+```
+
+---
+
+### Delete User Account
+
+```http
+POST /auth/delete
+```
+
+Deletes the authenticated user's account.
+
+### Headers
+
+```http
+Authorization: Bearer <token>
+```
+
+Requires authentication middleware.
+
 
 
 
