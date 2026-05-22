@@ -38,7 +38,7 @@ An AI-powered calorie tracking web application that analyzes food images and est
 
 ## 📂 Project Structure
 
-```bash
+
 project/
 │
 ├── Frontend/
