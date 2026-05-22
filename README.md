@@ -36,19 +36,33 @@ An AI-powered calorie tracking web application that analyzes food images and est
 
 ---
 
-## 📂 Project Structure
-
-project/
+AI-Calorie-Tracker/
 │
 ├── Frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── assets/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
 │
 ├── Backend/
 │   ├── controllers/
 │   ├── models/
 │   ├── routes/
+│   ├── middleware/
 │   ├── config/
+│   ├── uploads/
+│   ├── server.js
+│   ├── package.json
+│   └── .env
 │
-└── README.md
+├── README.md
+└── .gitignore
 
 
 
