@@ -64,6 +64,8 @@ AI-Calorie-Tracker/
 ├── README.md
 └── .gitignore
 
+---
+
 
 
 
