@@ -38,7 +38,6 @@ An AI-powered calorie tracking web application that analyzes food images and est
 
 ## 📂 Project Structure
 
-
 project/
 │
 ├── Frontend/
@@ -50,6 +49,9 @@ project/
 │   ├── config/
 │
 └── README.md
+
+
+
 
 screenshots
 <img width="1838" height="887" alt="Screenshot 2026-05-11 193409" src="https://github.com/user-attachments/assets/032186cb-859e-4d21-a558-21991a23c1ba" />
