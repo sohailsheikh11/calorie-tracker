@@ -144,7 +144,7 @@ Authenticates a user and returns a token.
 
 ```json
 {
-  "email": "sohail@example.com",
+  "email": "jimmy@example.com",
   "password": "password123"
 }
 ```
