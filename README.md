@@ -176,27 +176,7 @@ screenshots
 <img width="1877" height="531" alt="Screenshot 2026-05-11 193422" src="https://github.com/user-attachments/assets/f00a79c2-975b-4cb8-b467-2bd4cecfe23c" />
 
 
-Get Food History
-GET /foods
 
-Returns all saved food entries.
-
-📸 Future Improvements
-User authentication
-Daily calorie goals
-Nutrition charts
-Meal categories
-Mobile responsive UI
-Docker support
-Search and filters
-🧠 What I Learned
-React state management
-File uploads with Multer
-AI integration using Gemini API
-MongoDB Atlas database integration
-REST API development
-Async JavaScript and debugging
-Full-stack project structure
 📄 License
 
 This project is open-source and available under the MIT License.
