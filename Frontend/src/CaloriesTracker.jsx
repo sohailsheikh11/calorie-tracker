@@ -25,6 +25,8 @@ export default function CalorieTracker() {
   const [filter, setFilter] = useState("All");
   const [date] = useState(new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }));
 
+  console.log("hi")
+
   const fetchEntries = async () => {
     try {
       const res = await fetch("http://localhost:3000/food");
