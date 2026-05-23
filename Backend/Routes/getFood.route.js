@@ -6,8 +6,8 @@ import express from 'express'
 const router = express.Router();
 
 
-router.get("", getFood);
-router.delete("/:id", deleteFood);
+router.get("food", getFood);
+router.delete("food/:id", deleteFood);
 
 
 export default router;

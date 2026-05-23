@@ -15,6 +15,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-router.post("/analyze", upload.single("image"), analyzeFood);
+router.post("api/food/analyze", upload.single("image"), analyzeFood);
 
 export default router;

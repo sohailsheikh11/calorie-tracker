@@ -16,9 +16,9 @@ app.use(express.json());
 
 
 
-app.use("/api/food", foodRoute);
-app.use("/food", getFood);
-app.use("/auth", auth);
+app.use("/", foodRoute);
+app.use("/", getFood);
+app.use("/", auth);
 
 
 app.get("/", (req, res) => {

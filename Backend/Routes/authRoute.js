@@ -5,8 +5,8 @@ import authMiddleware from '../middleware/authMiddleware.js';
 const route = express.Router();
 
 
-route.post("/signup", signup);
- route.post("/login", login); 
- route.post("/delete",authMiddleware, deleteUser)
+route.post("auth/signup", signup);
+ route.post("auth/login", login); 
+ route.post("auth/delete",authMiddleware, deleteUser)
 
 export default route;
