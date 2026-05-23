@@ -20,7 +20,7 @@ export const analyzeFood = async (req, res) => {
     try {
 
         const model = genAI.getGenerativeModel({
-            model: "gemini-2.0-flash",
+            model: "gemini-2.5-flash",
         });
 
         const image = fileToGenerativePart(
@@ -32,12 +32,12 @@ export const analyzeFood = async (req, res) => {
         Analyze this food image.
 
         Return:
-        - Meal type ("Breakfast", "Lunch", "Dinner", "Snack")
-        - Food name
-        - Estimated calories
-        - Protein
-        - Carbs
-        - Fat
+        - meal_type ("Breakfast", "Lunch", "Dinner", "Snack")
+        - food_name
+        - estimated_calories
+        - protein
+        - carbs
+        - fat
 
         Give response in JSON format.
         `;
@@ -66,13 +66,13 @@ export const analyzeFood = async (req, res) => {
 
       food_name: foodData.food_name,
 
-      calories: foodData.estimated_calories,
+      calories: foodData.estimated_calories || 0,
 
-      protein: parseFloat(foodData.protein),
+      protein: parseFloat(foodData.protein) || 0,
 
-      carbs: parseFloat(foodData.carbs),
+      carbs: parseFloat(foodData.carbs) || 0,
 
-      fat: parseFloat(foodData.fat)
+      fat: parseFloat(foodData.fat) || 0
 
     });
 

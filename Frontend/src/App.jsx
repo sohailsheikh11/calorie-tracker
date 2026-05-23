@@ -2,10 +2,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CalorieTracker from "./CaloriesTracker";
 import AuthPages from "./pages/AuthPage";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { CalorieProvider } from "./context/CalorieContext";
 
 function App() {
   return (
-    <BrowserRouter>
+    <CalorieProvider>
+
+      <BrowserRouter>
       <Routes>
 
         <Route path="/" element={
@@ -18,6 +21,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </CalorieProvider>
   );
 }
 

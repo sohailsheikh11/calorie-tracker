@@ -6,6 +6,7 @@ import { API_BASE } from "./MEALTYPE";
 import MacroBar from "./components/MacroBar";
 import FoodCard from "./components/FoodCard";
 import CalorieRing from "./components/CalorieRing";
+import { useCalorie } from "./context/CalorieContext";
 
 
 const DAILY_GOAL = 2000;
@@ -19,15 +20,19 @@ const MACRO_COLORS = {
 
 
 export default function CalorieTracker() {
-  const [entries, setEntries] = useState([]);
-  const [loading, setLoading] = useState(true);
+  /* const [entries, setEntries] = useState([]);
+  const [loading, setLoading] = useState(true); */
   const [showModal, setShowModal] = useState(false);
   const [filter, setFilter] = useState("All");
   const [date] = useState(new Date().toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" }));
 
-  console.log("hi")
+  const {entries, setEntries, loading, fetchEntries} = useCalorie();
 
-  const fetchEntries = async () => {
+ 
+
+ 
+
+  /* const fetchEntries = async () => {
     try {
       const res = await fetch("http://localhost:3000/food");
 
@@ -41,9 +46,9 @@ export default function CalorieTracker() {
     } finally {
       setLoading(false);
     }
-  };
+  }; */
 
-  useEffect(() => { fetchEntries(); }, []); 
+ /*  useEffect(() => { fetchEntries(); }, []);  */
 
   const handleDelete = async (id) => {
     try {
