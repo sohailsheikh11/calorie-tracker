@@ -124,8 +124,8 @@ Creates a new user account.
 
 ```json
 {
-  "name": "Sohail",
-  "email": "sohail@example.com",
+  "name": "John",
+  "email": "John@example.com",
   "password": "password123"
 }
 ```
